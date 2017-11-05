@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VoronoiTreemap</title>
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="D3LayoutVoronoiTreemap.js"></script>
+</head>
+<body>
+
+    <script>
+        function get_d_from_polygon(polygon) {
+            return "M" + polygon.join("L") + "Z";
+        }
+        width = 1000;
+        height = 800;
+        svg_canvas = d3.select("body").append("svg")
+            .attr("width", width)
+            .attr("height", height);
+        svg_polygon = [[0, 0], [0, height], [width, height], [width, 0]];
+        //svg_canvas.append("path").attr("d", get_d_from_polygon(svg_polygon));
+        $.getJSON("data.json", function(data) {
+            console.log(data);
+
+        });
+    </script>
+</body>
+</html>
